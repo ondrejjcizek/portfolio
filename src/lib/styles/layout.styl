@@ -1,0 +1,59 @@
+// $layout = (
+// 	'columns-count': (
+// 		6,
+// 		12
+// 	),
+// 	'columns-gap': (
+// 		24px,
+// 		24px
+// 	),
+// 	'margin': (
+// 		16px,
+// 		40px
+// 	)
+// );
+
+// $viewports = {
+//     small:         {min: 420,  max: 640},
+//     smallWide:     {min: 641,  max: 743},
+//     medium:        {min: 744,  max: 767},
+//     large:         {min: 768,  max: 1023},
+//     xlarge:        {min: 1024, max: 1399}
+// }
+
+// // change to em values
+// for $type, $range in $viewports
+//     $boundaries = {}
+//     for $boundary, $value in $range
+//         $boundaries[$boundary] = $value/16em;
+//     $viewports[$type] = $boundaries;
+
+// // breakpoints
+// $small-up = 'screen and (min-width: ' + $viewports.small.min + ')'
+
+$layout = {
+    columnCount:    {mobile: 6,  desktop: 12},
+    columnGap:      {mobile: 24,  desktop: 24},
+    margin:         {mobile: 16,  desktop: 40},
+}
+
+&:root {
+    --layout-columns-count: $layout.columnCount.mobile;
+    --layout-columns-gap: $layout.columnGap.mobile;
+    --layout-margin: $layout.margin.mobile
+}
+	// --layout-columns-count: #{nth(map.get($layout, 'columns-count'), 1)};
+	// --layout-columns-gap: #{mobile-vw(nth(map.get($layout, 'columns-gap'), 1))};
+	// --layout-margin: #{mobile-vw(nth(map.get($layout, 'margin'), 1))};
+
+	// @include desktop {
+	// 	--layout-columns-count: #{nth(map.get($layout, 'columns-count'), 2)};
+	// 	--layout-columns-gap: #{desktop-vw(nth(map.get($layout, 'columns-gap'), 2))};
+	// 	--layout-margin: #{desktop-vw(nth(map.get($layout, 'margin'), 2))};
+	// }
+
+	// --layout-width: calc(100vw - (2 * var(--layout-margin)));
+	// --layout-column-width: calc(
+	// 	(var(--layout-width) - ((var(--layout-columns-count) - 1) * var(--layout-columns-gap))) /
+	// 		var(--layout-columns-count)
+	// );

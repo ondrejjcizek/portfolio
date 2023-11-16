@@ -1,0 +1,8 @@
+rvw($from = 1, $to = 5, $unit = 'rem', $fromMedia = $viewports.medium.min, $toMedia = $viewports.large.max)
+
+    $a = ($from - $to) / ((remove-unit($fromMedia) * 16) - (remove-unit($toMedia) * 16))
+    $b = $from - ($a * (remove-unit($fromMedia) * 16))
+
+    $multiply = $unit == 'rem' ? 0.1 : 1
+
+    return 'calc(%s + %s)' % (($a * 100vw) ($b * unit($multiply, $unit)))   

@@ -1,0 +1,14 @@
+mobile-vw(pixels, base-vw = $mobile-width)
+    (pixels * 100vw) / base-vw
+
+mobile-vh(pixels, base-vh = $mobile-height)
+	(pixels * 100vh) / $base-vh
+
+desktop-vw(pixels, base-vw = $desktop-width)
+	(pixels * 100vw) / $base-vw
+
+desktop-vh(pixels, base-vh = $desktop-height)
+	(pixels * 100vh) / $base-vh
+
+// columns(columns)
+// 	calc((#{$columns} * var(--layout-column-width)) + ((#{$columns} - 1) * var(--layout-columns-gap)));

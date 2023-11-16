@@ -1,0 +1,49 @@
+/* Breakpoints */
+$mobile-breakpoint = 800px
+
+// Viewport Sizes
+$desktop-width = 1440px
+$desktop-height = 850px
+
+$mobile-width = 375px
+$mobile-height = 650px
+
+// ---------------------------------------
+// Lenis Breakpoonts 
+// ---------------------------------------
+
+$viewports = {
+    small:         {min: 420,  max: 640},
+    smallWide:     {min: 641,  max: 743},
+    medium:        {min: 744,  max: 767},
+    large:         {min: 768,  max: 1023},
+    xlarge:        {min: 1024, max: 1399}
+}
+
+// change to em values
+for $type, $range in $viewports
+    $boundaries = {}
+    for $boundary, $value in $range
+        $boundaries[$boundary] = $value/16em;
+    $viewports[$type] = $boundaries;
+
+// breakpoints
+$small-up = 'screen and (min-width: ' + $viewports.small.min + ')'
+$small-only = $small-up + ' and (max-width: ' + $viewports.small.max + ')'
+$small-max = 'screen and (max-width: ' + $viewports.small.max + ')'
+
+$small-wide-up = 'screen and (min-width: ' + $viewports.smallWide.min + ')'
+$small-wide-only = $small-wide-up + ' and (max-width: ' + $viewports.smallWide.max + ')'
+$small-wide-max = 'screen and (max-width: ' + $viewports.smallWide.max + ')'
+
+$medium-up = 'screen and (min-width: ' + $viewports.medium.min + ')'
+$medium-only = $medium-up + ' and (max-width: ' + $viewports.medium.max + ')'
+$medium-max = 'screen and (max-width: ' + $viewports.medium.max + ')'
+
+$large-up = 'screen and (min-width: ' + $viewports.large.min + ')'
+$large-only = $large-up + ' and (max-width: ' + $viewports.large.max + ')'
+$large-max = 'screen and (max-width: ' + $viewports.large.max + ')'
+
+$xlarge-up = 'screen and (min-width: ' + $viewports.xlarge.min + ')'
+$xlarge-only = $xlarge-up + ' and (max-width: ' + $viewports.xlarge.max + ')'
+$xlarge-max = 'screen and (max-width: ' + $viewports.xlarge.max + ')'
