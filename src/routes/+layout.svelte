@@ -2,18 +2,11 @@
 	import '$lib/styles/main.styl';
 </script>
 
-<div class="layout">
-	<main class="main"><slot /></main>
-</div>
+<main>
+	<slot />
+</main>
 
 <style lang="stylus">
-	.layout
-		background-color white
-		color black
-		display flex
-		flex-direction column
-		min-height 100vh
-
-		.main
-			flex-grow 1
+	main
+		padding 50px
 </style>
