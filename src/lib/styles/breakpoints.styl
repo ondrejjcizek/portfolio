@@ -13,11 +13,14 @@ $mobile-height = 650px
 // ---------------------------------------
 
 $viewports = {
-    small:         {min: 420,  max: 640},
-    smallWide:     {min: 641,  max: 743},
-    medium:        {min: 744,  max: 767},
-    large:         {min: 768,  max: 1023},
-    xlarge:        {min: 1024, max: 1399}
+    xsmall:     {min: 0,  max: 359},
+    small:     {min: 360,  max: 539},
+    smallWide: {min: 540,  max: 767},
+    medium:    {min: 768,  max: 1023},
+    large:     {min: 1024, max: 1199},
+    xlarge:    {min: 1200, max: 1619},
+    xxlarge:   {min: 1620 , max: 1919},
+    xxxlarge:  {min: 1920}
 }
 
 // change to em values
@@ -28,6 +31,10 @@ for $type, $range in $viewports
     $viewports[$type] = $boundaries;
 
 // breakpoints
+$xsmall-up = 'screen and (min-width: ' + $viewports.xsmall.min + ')'
+$xsmall-only = $xsmall-up + ' and (max-width: ' + $viewports.xsmall.max + ')'
+$xsmall-max = 'screen and (max-width: ' + $viewports.xsmall.max + ')'
+
 $small-up = 'screen and (min-width: ' + $viewports.small.min + ')'
 $small-only = $small-up + ' and (max-width: ' + $viewports.small.max + ')'
 $small-max = 'screen and (max-width: ' + $viewports.small.max + ')'
@@ -47,3 +54,18 @@ $large-max = 'screen and (max-width: ' + $viewports.large.max + ')'
 $xlarge-up = 'screen and (min-width: ' + $viewports.xlarge.min + ')'
 $xlarge-only = $xlarge-up + ' and (max-width: ' + $viewports.xlarge.max + ')'
 $xlarge-max = 'screen and (max-width: ' + $viewports.xlarge.max + ')'
+
+$xxlarge-up = 'screen and (min-width: ' + $viewports.xxlarge.min + ')'
+$xxlarge-only = $xxlarge-up + ' and (max-width: ' + $viewports.xxlarge.max + ')'
+$xxlarge-max = 'screen and (max-width: ' + $viewports.xxlarge.max + ')'
+
+$xxxlarge-up = 'screen and (min-width: ' + $viewports.xxxlarge.min + ')'
+
+$retina = '(min-resolution: 1.3dppx)'
+$landscape = 'screen and (orientation: landscape)'
+$portrait = 'screen and (orientation: portrait)'
+
+$short-up = 'screen and (min-height: 48em)' // 768
+$short-max = 'screen and (max-height: 48em)'
+$high-up = 'screen and (min-height: 67.5em)' // 1080
+$high-max = 'screen and (max-height: 67.5em)'

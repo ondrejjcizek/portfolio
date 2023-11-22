@@ -1,63 +1,44 @@
-<div class="Availability">
-	<p>Available <span>February 2023</span></p>
-	<a href="#todo">Let's connect 🙌</a>
-</div>
+<script lang="ts">
+    import CardWrapper from './../lib/components/CardWrapper.svelte'
+    import Availability from '$lib/components/Availability.svelte'
+    import Title from '$lib/components/Title.svelte'
+    import Card from '$lib/components/Card.svelte'
+    import Container from '$lib/components/Container.svelte'
+</script>
 
-<style lang="stylus">
-    .Availability
-        display flex
-        flex-direction column
-        align-items center
-        justify-content space-between
-        background #19191A
-        border 1px solid rgba(white, .05)
-        border-radius 20px
-        margin 0 auto
-        width 100%
-        max-width fit-content
-        gap 20px
-        padding 20px
-
-        @media $small-wide-up
-            padding 9px
-            flex-direction row
-            max-width 600px
-
-        p
-            position relative
-            top 2px
-            color #6C6D72
-            font-size 1.5rem
-            margin-left 45px
-            white-space nowrap
-
-            @media $small-max
-                margin-right 25px
-
-            &:before
-                content ""
-                position absolute
-                top 50%
-                transform translateY(-50%)
-                left -22px
-                height 8px
-                aspect-ratio 1
-                background #37C03C
-                border-radius 50%
-                outline 6px solid rgba(#37C03C, .10)
-
-            span
-                color white
-        
-        a
-            display grid
-            place-items center
-            text-decoration none
-            color white
-            background #F2320B
-            min-height 60px
-            min-width 180px
-            text-align center
-            border-radius 10px
-
-</style>
+<Container>
+    <Availability />
+    <Title tag="h2" align="center"
+        ><span>Featured</span> projects</Title
+    >
+    <CardWrapper>
+        <Card
+            project="hotel"
+            title="CPI Hotels"
+            desc="5 websites, 3 languagues & 3 hotels"
+            src="projects/hotel.png"
+            srcset="projects/hotel@2x.png 2x"
+        ></Card>
+        <Card
+            project="centre"
+            title="CPI Shopping Centres"
+            desc="Front-End for 15 famous shopping malls "
+            src="projects/centre.png"
+            srcset="projects/centre@2x.png 2x"
+        ></Card>
+        <Card
+            project="tereos"
+            title="Tereos TTD"
+            desc="Largest producer of sugar and alcohol in the Czech Republic"
+            src="projects/tereos.png"
+            srcset="projects/tereos@2x.png 2x"
+        ></Card>
+        <Card
+            project="ddf"
+            title="KPMG Digital Design"
+            desc="Digital Design Framework KPMG Czech Republic"
+            src="projects/ddf.png"
+            srcset="projects/ddf@2x.png 2x"
+        ></Card>
+    </CardWrapper>
+</Container>

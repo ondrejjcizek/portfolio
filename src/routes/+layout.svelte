@@ -1,12 +1,12 @@
 <script lang="ts">
-	import '$lib/styles/main.styl';
+    import '$lib/styles/main.styl'
 </script>
 
 <main>
-	<slot />
+    <slot />
 </main>
 
 <style lang="stylus">
 	main
-		padding 50px
+		padding percentage(100/1920) 0 percentage(200/1920)
 </style>
