@@ -19,6 +19,7 @@
 <style lang="stylus">
     .Text
         margin 0
+        transition color .6s ease
 
     .md
         line-height (44/36)
