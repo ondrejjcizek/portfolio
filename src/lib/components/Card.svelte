@@ -20,20 +20,19 @@
             setTimeout(() => {
                 event.target.classList.remove('is-leaving')
                 event.target.classList.add('is-active')
+                event.target.classList.remove('is-delayed')
                 background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(20)`
-            }, 25)
-
-            setTimeout(() => {
-                event.target.classList.add('is-delayed')
-            }, 50)
+            }, 10)
         })
 
         card.addEventListener('mouseleave', (event: MouseEvent) => {
-            background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px)`
+            background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(0)`
             event.target.classList.remove('is-active')
             event.target.classList.remove('is-delayed')
             event.target.classList.add('is-leaving')
-            background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(0)`
+            setTimeout(() => {
+                event.target.classList.add('is-delayed')
+            }, 500)
         })
     })
 </script>
@@ -110,7 +109,7 @@
                 opacity 1
             
             .is-delayed &
-                transition transform 4s $easing, opacity 1s $easing
+                transition transform 0s $easing, opacity 1s $easing
         
         &.hotel
             .Card-image
@@ -118,18 +117,34 @@
             
         &.hotel
             .Card-background
-                background linear-gradient(135deg, #FF5F03 36%, #E62B2B 60%)
+                // background linear-gradient(135deg, #FF5F03 36%, #E62B2B 60%);
+                background linear-gradient(223deg, #E62B2B 6.25%, #FF5F03 18.75%, #E62B2B 31.25%, #FF5F03 37.5%, #E62B2B 50%, #FF5F03 56.25%, #E62B2B 68.75%, #FF5F03 81.25%, #E62B2B 93.75%);
+                animation VisualBackground 10s ease infinite
+                background-size 400% 100%
         
         &.centre
             .Card-background
-                background linear-gradient(225deg, #E14134 50%, #B62056 70%);
+                background linear-gradient(212.6deg, #AC0D47 12.11%, #FF573C 125.59%, #FF562A 127.06%);
+                animation VisualBackground 8s ease infinite
+                background-size 400% 100%
     
         &.ddf
             .Card-background
                 background linear-gradient(45deg, #29ADCF 30%, #171ED1 60%);
+                animation VisualBackground 4s ease infinite
+                background-size 200% 100%
 
         &.tereos
             .Card-background
                 background linear-gradient(225deg, #016fc4 50%, #29ADCF 60%);
+                animation VisualBackground 4s ease infinite
+                background-size 200% 100%
 
+    @keyframes VisualBackground
+        0%
+            background-position 0% 50%
+        50%
+            background-position 100% 50%
+        100%
+            background-position 0% 50%
 </style>
