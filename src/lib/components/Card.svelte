@@ -16,23 +16,24 @@
 
     onMount(() => {
         card.addEventListener('mouseenter', (event: MouseEvent) => {
-            background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(5)`
+            background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(20)`
             event.target.classList.add('is-active')
             event.target.classList.remove('is-leaving')
-            // setTimeout(() => {
-            //     background.style.transform = `translate(0px, 0px)`
-            // }, 50)
+            setTimeout(() => {
+                event.target.classList.add('is-delayed')
+            }, 50)
         })
 
         card.addEventListener('mouseleave', (event: MouseEvent) => {
             background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(0)`
             event.target.classList.remove('is-active')
+            event.target.classList.remove('is-delayed')
             event.target.classList.add('is-leaving')
         })
     })
 </script>
 
-<article class="Card {project}" bind:this={card}>
+<a href="https://tereos-ttd.com/" class="Card {project}" bind:this={card}>
     <div class="Card-wrapper">
         <Title tag="h3" size="md">{title}</Title>
         <Text color="grey">{desc}</Text>
@@ -46,7 +47,7 @@
         </div>
     </div>
     <div class="Card-background" bind:this={background}></div>
-</article>
+</a>
 
 <style lang="stylus">
     $easing = cubic-bezier(0.190, 1.000, 0.220, 1.000);
@@ -60,6 +61,7 @@
         max-height 680px
         height 100%
         overflow hidden
+        text-decoration none
 
         &:hover
             :global(.Text)
@@ -82,22 +84,26 @@
                 width 100%
             
         &-background
-            top 0
-            left 0
+            top -50px
+            left -50px
             position absolute
             transform-origin center
-            height 400px
-            width 400px
+            height 100px
+            width 100px
             background blue
             border-radius 50%
             opacity 0
             transition transform 4s $easing, width 2s ease, height 2s ease, opacity 0.3s $easing
 
             .is-leaving &
-                transition transform 4s $easing, width 1.5s $easing, height 1.5s $easing, opacity 1.2s $easing
+                transition transform 1s, opacity 2s $easing
 
             .is-active &
+                transition transform 1s, opacity 1s $easing
                 opacity 1
+            
+            .is-delayed &
+                transition transform 4s $easing, width 2s ease, height 2s ease, opacity 1s $easing
         
         &.hotel
             .Card-image

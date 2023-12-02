@@ -17,9 +17,11 @@
 </svelte:element>
 
 <style lang="stylus">
+    $easing = cubic-bezier(0.190, 1.000, 0.220, 1.000);
+
     .Text
         margin 0
-        transition color .6s ease
+        transition color 1s $easing
 
     .md
         line-height (44/36)
