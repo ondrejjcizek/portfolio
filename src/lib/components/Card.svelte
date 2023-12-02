@@ -94,11 +94,11 @@
             border-radius 50%
             opacity 0
             transition transform 4s $easing, width 2s ease, height 2s ease, opacity 0.3s $easing, filter 1s $easing
-            filter: blur(2px);
+            filter blur(2px)
 
             .is-leaving &
                 transition transform 1.3s $easing, opacity 2s $easing
-                filter: blur(7px);
+                filter blur(7px)
 
             .is-active &
                 transition transform 1s, opacity 1s $easing
@@ -111,21 +111,20 @@
             .Card-image
                 position relative
             
+        &.hotel
             .Card-background
-                background linear-gradient(38deg, #FF5F03 0%, #E62B2B 100%)
-
-                // img
+                background linear-gradient(135deg, #FF5F03 36%, #E62B2B 60%)
         
         &.centre
             .Card-background
-                background linear-gradient(38deg, #E14134 0%, #B62056 100%);
+                background linear-gradient(225deg, #E14134 50%, #B62056 70%);
     
         &.ddf
             .Card-background
-                background linear-gradient(38deg, #29ADCF 0%, #171ED1 100%);
+                background linear-gradient(45deg, #29ADCF 30%, #171ED1 60%);
 
         &.tereos
             .Card-background
-                background linear-gradient(38deg, #2997E9 0%, #2265D4 100%);
+                background linear-gradient(225deg, #016fc4 50%, #29ADCF 60%);
 
 </style>
