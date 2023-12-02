@@ -93,10 +93,12 @@
             background blue
             border-radius 50%
             opacity 0
-            transition transform 4s $easing, width 2s ease, height 2s ease, opacity 0.3s $easing
+            transition transform 4s $easing, width 2s ease, height 2s ease, opacity 0.3s $easing, filter 1s $easing
+            filter: blur(2px);
 
             .is-leaving &
-                transition transform 1s, opacity 2s $easing
+                transition transform 1.3s $easing, opacity 2s $easing
+                filter: blur(7px);
 
             .is-active &
                 transition transform 1s, opacity 1s $easing
