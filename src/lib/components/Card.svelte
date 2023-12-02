@@ -16,19 +16,24 @@
 
     onMount(() => {
         card.addEventListener('mouseenter', (event: MouseEvent) => {
-            background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(20)`
-            event.target.classList.add('is-active')
-            event.target.classList.remove('is-leaving')
+            background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px)`
+            setTimeout(() => {
+                event.target.classList.remove('is-leaving')
+                event.target.classList.add('is-active')
+                background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(20)`
+            }, 25)
+
             setTimeout(() => {
                 event.target.classList.add('is-delayed')
             }, 50)
         })
 
         card.addEventListener('mouseleave', (event: MouseEvent) => {
-            background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(0)`
+            background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px)`
             event.target.classList.remove('is-active')
             event.target.classList.remove('is-delayed')
             event.target.classList.add('is-leaving')
+            background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(0)`
         })
     })
 </script>
@@ -93,7 +98,7 @@
             background blue
             border-radius 50%
             opacity 0
-            transition transform 4s $easing, width 2s ease, height 2s ease, opacity 0.3s $easing, filter 1s $easing
+            transition transform 0s $easing, opacity 0.3s $easing, filter 1s $easing
             filter blur(3px)
 
             .is-leaving &
@@ -105,7 +110,7 @@
                 opacity 1
             
             .is-delayed &
-                transition transform 4s $easing, width 2s ease, height 2s ease, opacity 1s $easing
+                transition transform 4s $easing, opacity 1s $easing
         
         &.hotel
             .Card-image
