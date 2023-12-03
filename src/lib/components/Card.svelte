@@ -9,6 +9,7 @@
     export let desc: string
     export let src: string
     export let srcset: string
+    export let href: string
     export let project: string
 
     let card: any
@@ -37,7 +38,7 @@
     })
 </script>
 
-<a href="https://tereos-ttd.com/" class="Card {project}" bind:this={card}>
+<a {href} class="Card {project}" bind:this={card} target="_blank">
     <div class="Card-wrapper">
         <Title tag="h3" size="md">{title}</Title>
         <Text color="grey">{desc}</Text>
@@ -66,6 +67,7 @@
         height 100%
         overflow hidden
         text-decoration none
+        cursor none
 
         &:hover
             :global(.Text)
