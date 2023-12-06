@@ -15,7 +15,7 @@
 <style lang="stylus">
     .Hero
         position relative
-        height 100vh
+        height 100svh
         display grid
         place-items center
         margin-bottom percentage(200/1920)
@@ -26,6 +26,7 @@
             width 100%
             height 100%
             object-fit cover
+            opacity .5
         
         img
             position absolute

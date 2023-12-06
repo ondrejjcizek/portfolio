@@ -24,7 +24,7 @@
         width 100%
         max-width fit-content
         gap 20px
-        padding 10px 30px 10px 10px
+        padding 5px 0px 5px 0px
         margin-bottom 190px
 
         @media $small-wide-up
