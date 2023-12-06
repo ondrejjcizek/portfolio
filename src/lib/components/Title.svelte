@@ -37,11 +37,12 @@
 
     .lg
         margin 0 0 percentage(74/1100)
-        font-size 3rem
+        font-size 3.4rem
         letter-spacing -1px
+        font-weight 500
 
         @media $small-wide-up
-            font-size rvw(30, 60, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)
+            font-size rvw(34, 60, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)
 
         @media $xxlarge-up
             font-size 6rem

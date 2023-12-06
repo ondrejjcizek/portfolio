@@ -41,12 +41,14 @@
             display flex
             flex-direction column
             font-weight 500
-            
             width 100%
             text-align center
-            font-size rvw(75, 170, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)
+            font-size 6rem
             line-height (172/170)
             margin 0
+
+            @media $medium-up
+                font-size rvw(60, 170, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)
 
             @media $xxlarge-up
                 font-size 17rem

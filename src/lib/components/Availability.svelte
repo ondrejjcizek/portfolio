@@ -8,8 +8,12 @@
 
 <style lang="stylus">
     .Availability
+        position absolute
+        left 50%
+        transform translateX(-50%)
+        top 48px
+        z-index 5
         display flex
-        display none
         flex-direction column
         align-items center
         justify-content space-between
@@ -20,13 +24,17 @@
         width 100%
         max-width fit-content
         gap 20px
-        padding 20px
+        padding 10px 30px 10px 10px
         margin-bottom 190px
 
         @media $small-wide-up
-            padding 9px
+            top 48px
             flex-direction row
+
+        @media $medium-up
             max-width 600px
+            padding 10px
+            top 70px
 
         p
             position relative
@@ -55,7 +63,7 @@
                 color white
         
         a
-            display flex
+            display none
             justify-content center
             align-items center
             gap 12px
@@ -66,6 +74,9 @@
             min-width 180px
             text-align center
             border-radius 10px
+
+            @media $medium-up
+                display flex
 
             span
                 position relative

@@ -7,9 +7,9 @@
     import Hero from '$lib/components/Hero.svelte'
 </script>
 
+<Availability />
 <Hero />
 <Container>
-    <Availability />
     <Title tag="h2" align="center"><span>Featured</span> projects</Title>
     <CardWrapper>
         <Card
