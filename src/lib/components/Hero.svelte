@@ -40,9 +40,10 @@
             z-index 3
             display flex
             flex-direction column
+            
             width 100%
             text-align center
-            font-size rvw(60, 170, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)
+            font-size rvw(75, 170, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)
             line-height (172/170)
             margin 0
 
@@ -52,11 +53,17 @@
             span
                 position relative
                 &:nth-child(1)
-                    right (223/170em)
+                    right (90/170em)
+
+                    @media $medium-up
+                        right (223/170em)
                 
                 &:nth-child(2)
                     color #2B5DFF
-                    left (259/170em)
+                    left (104/170em)
+
+                    @media $medium-up
+                        left (259/170em)
                 
                 &:nth-child(3)
                     {}
