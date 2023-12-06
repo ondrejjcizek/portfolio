@@ -41,6 +41,8 @@
 </main>
 
 <style lang="stylus">
-	main
-		padding percentage(100/1920) 0 percentage(200/1920)
+    main
+        padding percentage(100/1920) 0 percentage(200/1920)
+        padding-top 0
+        overflow hidden
 </style>

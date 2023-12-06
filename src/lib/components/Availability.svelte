@@ -1,11 +1,15 @@
 <div class="Availability">
     <p>Available <span>February 2023</span></p>
-    <a href="#todo">Let's connect 🙌</a>
+    <a href="#todo">
+        <span>Let's connect</span>
+        <img src="hands.svg" alt="" />
+    </a>
 </div>
 
 <style lang="stylus">
     .Availability
         display flex
+        display none
         flex-direction column
         align-items center
         justify-content space-between
@@ -51,14 +55,25 @@
                 color white
         
         a
-            display grid
-            place-items center
+            display flex
+            justify-content center
+            align-items center
+            gap 12px
             text-decoration none
             color white
-            background #F2320B
+            background #2B5DFF
             min-height 60px
             min-width 180px
             text-align center
             border-radius 10px
+
+            span
+                position relative
+                top 2px
+
+            img
+                width 24px
+                position relative
+                top -1px
 
 </style>

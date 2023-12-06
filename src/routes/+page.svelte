@@ -4,8 +4,10 @@
     import Title from '$lib/components/Title.svelte'
     import Card from '$lib/components/Card.svelte'
     import Container from '$lib/components/Container.svelte'
+    import Hero from '$lib/components/Hero.svelte'
 </script>
 
+<Hero />
 <Container>
     <Availability />
     <Title tag="h2" align="center"><span>Featured</span> projects</Title>
