@@ -40,6 +40,7 @@
             z-index 3
             display flex
             flex-direction column
+            font-weight 500
             
             width 100%
             text-align center
