@@ -3,7 +3,8 @@
 </script>
 
 <div class="Hero">
-    <img src="video-overlay.png" alt="" />
+    <!-- <img src="video-overlay.png" alt="" draggable="false" /> -->
+    <div class="Hero-overlay"></div>
     <video src="output.mp4" muted autoplay loop playsinline></video>
     <h1>
         <span>Frontend</span>
@@ -26,15 +27,33 @@
             width 100%
             height 100%
             object-fit cover
-            opacity .5
+            opacity 1
         
-        img
+        &-overlay
             position absolute
             z-index 2
             inset 0
             width 100%
             height 100%
-            object-fit cover
+            background: radial-gradient(circle, rgba(17,17,18,0) 0%, rgba(17,17,18,0.6615239845938375) 25%, rgba(17,17,18, 0.97) 50%, rgba(17,17,18,1) 75%, rgba(17,17,18,1) 100%)
+
+            &:after
+                content ""
+                position absolute
+                z-index 1
+                bottom 0
+                width 100%
+                height 100%
+                background: linear-gradient(180deg, rgba(17,17,18,0) 40%, rgba(17,17,18,1) 100%);
+            
+            &:before
+                content ""
+                position absolute
+                z-index 1
+                top 0
+                width 100%
+                height 100%
+                background: linear-gradient(0deg, rgba(17,17,18,0) 40%, rgba(17,17,18,1) 100%);
 
         h1
             position relative
@@ -47,6 +66,12 @@
             font-size 6rem
             line-height (172/170)
             margin 0
+            user-select none
+            color white
+            mix-blend-mode difference
+            // color #6a6a6a
+            color hsl(0deg 0% 40.7%)
+            color #a9a9a9
 
             @media $medium-up
                 font-size rvw(60, 170, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)
@@ -64,6 +89,7 @@
                 
                 &:nth-child(2)
                     color #2B5DFF
+                    // color hwb(225.85deg 17.12% 29.74%)
                     left (104/170em)
 
                     @media $medium-up
