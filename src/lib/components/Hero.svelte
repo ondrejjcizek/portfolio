@@ -1,19 +1,21 @@
 <script lang="ts">
     import { onMount } from 'svelte'
-
     let video: HTMLVideoElement
 
     onMount(() => {
-        video.addEventListener('loadeddata', () => {
-            video.style.opacity = '1'
+        let video = document.querySelector('video')
+        video?.addEventListener('canplaythrough', () => {
+            if (video) {
+                video.style.opacity = '1'
+                video.play()
+            }
         })
-        video.play()
     })
 </script>
 
 <div class="Hero">
     <div class="Hero-overlay"></div>
-    <video src="hero.mp4" muted autoplay loop playsinline bind:this={video}></video>
+    <video src="hero.mp4" muted autoplay loop playsinline bind:this={video} />
     <h1>
         <span>Frontend</span>
         <span>Creative</span>
@@ -26,7 +28,7 @@
 
     .Hero
         position relative
-        height 100svh
+        height 100dvh
         display grid
         place-items center
         margin-bottom percentage(200/1920)
