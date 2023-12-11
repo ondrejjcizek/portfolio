@@ -6,8 +6,9 @@
     onMount(() => {
         const initCursor = () => {
             document.addEventListener('mousemove', e => {
-                cursor.style.top = `${e.clientY}px`
-                cursor.style.left = `${e.clientX}px`
+                cursor.style.top = `${e.clientY - 10}px`
+                cursor.style.left = `${e.clientX - 10}px`
+                cursor.style.opacity = '1'
             })
             const hoverables = document.querySelectorAll('.Card')
             hoverables.forEach(hoverable => {
@@ -28,10 +29,11 @@
 
 <div class="Cursor" bind:this={cursor}>
     <div class="Cursor-background" bind:this={background}></div>
+    <img src="view.svg" alt="View" />
 </div>
 
 <style lang="stylus">
-    $easing = cubic-bezier(0.190, 1.000, 0.220, 1.000);
+    $easing = cubic-bezier(0.190, 1.000, 0.220, 1.000)
 
     .Cursor
         position fixed
@@ -39,6 +41,15 @@
         left 0
         pointer-events none
         z-index 5
+        opacity 0
+        transition opacity 0.6s $easing
+
+        @media $small-wide-max
+            display none
+        
+        :global(&.is-active)
+            img
+                opacity 1
 
         &-background
             border-radius 50%
@@ -46,30 +57,17 @@
             width 20px
             height 20px
             transition transform 1s $easing, background 0.6s $easing
-            backdrop-filter: blur(0.5px);
+            backdrop-filter blur(0.5px)
 
             :global(.is-active &)
-                background rgba(white, 0.4)
+                background rgba(white, 0.4) !important
         
-
-        &:before
-            position fixed
-            content url('view.svg')
+        img
+            position absolute
+            top 0
+            left 0
             transform translate(-15px, 2px)
             z-index 100
             opacity 0
-            transition opacity .3s ease
-            transition-delay 0s
-
-        :global(&.is-active)
-            &:before
-                opacity 1
-        // :global(&.is-link)
-        //     top -60px
-        //     left -60px
-        //     transform-origin center 0px
-        //     background-color white
-        //     width 120px
-        //     height 120px
-
+            transition opacity .3s $easing
 </style>

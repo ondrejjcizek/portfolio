@@ -22,8 +22,6 @@
                 // format the output
                 `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}" />`
         }
-
-        injectSpeedInsights()
     })
 
     afterUpdate(() => {

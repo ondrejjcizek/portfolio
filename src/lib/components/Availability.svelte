@@ -3,7 +3,6 @@
     <a href="#todo">
         <span>Let's connect</span>
         <img src="hands.svg" alt="" />
-        <img src="view.svg" alt="" />
     </a>
 </div>
 
