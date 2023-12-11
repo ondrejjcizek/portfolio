@@ -59,7 +59,7 @@
 
     .Card
         position relative
-        background #19191A
+        background rgba(#19191A, .7)
         border 1px solid rgba(white, .05)
         padding percentage(47/535) percentage(50/535) percentage(61/535)
         border-radius 20px
@@ -68,6 +68,7 @@
         overflow hidden
         text-decoration none
         cursor none
+        mix-blend-mode difference
 
         &:hover
             :global(.Text)
@@ -101,6 +102,7 @@
             opacity 0
             transition transform 0s $easing, opacity 0.3s $easing, filter 1s $easing
             filter blur(3px)
+            // mix-blend-mode difference
 
             .is-leaving &
                 transition transform 1.3s $easing, opacity 2s $easing

@@ -32,7 +32,7 @@
         margin-bottom percentage(200/1920)
 
         video
-            position absolute
+            position fixed
             inset 0
             width 100%
             height 100%
@@ -41,7 +41,7 @@
             transition opacity 2s $easing
         
         &-overlay
-            position absolute
+            position fixed
             z-index 2
             inset 0
             width 100%
