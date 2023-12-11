@@ -6,7 +6,6 @@
     onMount(() => {
         const initCursor = () => {
             document.addEventListener('mousemove', e => {
-                console.log(e)
                 cursor.style.top = `${e.clientY}px`
                 cursor.style.left = `${e.clientX}px`
             })

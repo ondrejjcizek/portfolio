@@ -30,6 +30,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@vercel/speed-insights": "^1.0.1",
 		"stylus": "^0.55.0"
 	}
 }
