@@ -17,6 +17,9 @@
 
     onMount(() => {
         card.addEventListener('mouseenter', (event: MouseEvent) => {
+            if (navigator.maxTouchPoints > 0) {
+                return
+            }
             background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px)`
             setTimeout(() => {
                 event.target.classList.remove('is-leaving')
@@ -27,6 +30,9 @@
         })
 
         card.addEventListener('mouseleave', (event: MouseEvent) => {
+            if (navigator.maxTouchPoints > 0) {
+                return
+            }
             background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(0)`
             event.target.classList.remove('is-active')
             event.target.classList.remove('is-delayed')
@@ -34,6 +40,12 @@
             setTimeout(() => {
                 event.target.classList.add('is-delayed')
             }, 500)
+        })
+
+        card.addEventListener('click', event => {
+            if (navigator.maxTouchPoints > 0) {
+                event.preventDefault()
+            }
         })
     })
 </script>
@@ -71,8 +83,9 @@
         mix-blend-mode difference
 
         &:hover
-            :global(.Text)
-                color white
+            +hover()
+                :global(.Text)
+                    color white
 
         &-wrapper
             position relative
@@ -102,7 +115,6 @@
             opacity 0
             transition transform 0s $easing, opacity 0.3s $easing, filter 1s $easing
             filter blur(3px)
-            // mix-blend-mode difference
 
             .is-leaving &
                 transition transform 1.3s $easing, opacity 2s $easing
