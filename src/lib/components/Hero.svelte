@@ -5,7 +5,11 @@
 <div class="Hero">
     <!-- <img src="video-overlay.png" alt="" draggable="false" /> -->
     <div class="Hero-overlay"></div>
-    <video src="output.mp4" muted autoplay loop playsinline></video>
+    <!-- <video src="output.mp4" muted autoplay loop playsinline></video> -->
+    <video muted autoplay loop playsinline>
+        <source src="hero.mp4" type="video/mp4; codecs=hevc" />
+        <source src="hero.webm" type="video/webm; codecs=vp9" />
+    </video>
     <h1>
         <span>Frontend</span>
         <span>Creative</span>
