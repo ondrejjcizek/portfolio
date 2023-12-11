@@ -44,9 +44,40 @@
 
         card.addEventListener('click', event => {
             if (navigator.maxTouchPoints > 0) {
-                event.preventDefault()
+                // event.preventDefault()
             }
         })
+
+        function displayEntry(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-obsersved')
+                entry.target.classList.remove('out-obsersved')
+                entry.target.classList.remove('is-leaving')
+                entry.target.classList.add('is-active')
+            } else {
+                entry.target.classList.remove('is-obsersved')
+                entry.target.classList.add('out-obsersved')
+                entry.target.classList.remove('is-active')
+                entry.target.classList.add('is-leaving')
+            }
+        }
+
+        let callback = function (entries, observer) {
+            if (navigator.maxTouchPoints > 0) {
+                entries.forEach(entry => {
+                    displayEntry(entry)
+                })
+            }
+        }
+
+        const options = {
+            rootMargin: '-48.4% 0% -48.4% 0%',
+            threshold: 0,
+        }
+
+        let observer = new IntersectionObserver(callback, options)
+
+        observer.observe(card)
     })
 </script>
 
@@ -81,6 +112,24 @@
         text-decoration none
         cursor none
         mix-blend-mode difference
+
+        &.is-active
+            :global(.Text)
+                color white
+
+        &.is-obsersved
+            .Card-background
+                @media (pointer: coarse)
+                    opacity 1
+                    left calc(50% - 40px)
+                    transform translate(-50%, 0) scale(20)
+        
+        &.out-obsersved
+            .Card-background
+                @media (pointer: coarse)
+                    opacity 0
+                    left calc(50% - 40px)
+                    transform translate(-50%, 100%) scale(20)
 
         &:hover
             +hover()
@@ -119,6 +168,9 @@
             .is-leaving &
                 transition transform 1.3s $easing, opacity 2s $easing
                 filter blur(9px)
+
+                @media $small-wide-max
+                    transition transform 1.3s $easing, opacity 1s $easing
 
             .is-active &
                 transition transform 1s, opacity 1s $easing
