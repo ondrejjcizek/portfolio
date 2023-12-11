@@ -5,9 +5,9 @@
 
     onMount(() => {
         video.addEventListener('loadeddata', () => {
-            console.log('loaded')
-            console.log('jaja')
+            video.style.opacity = '1'
         })
+        video.play()
     })
 </script>
 
@@ -22,6 +22,8 @@
 </div>
 
 <style lang="stylus">
+    $easing = cubic-bezier(0.190, 1.000, 0.220, 1.000)
+
     .Hero
         position relative
         height 100svh
@@ -35,7 +37,8 @@
             width 100%
             height 100%
             object-fit cover
-            opacity 1
+            opacity 0
+            transition opacity 2s $easing
         
         &-overlay
             position absolute
