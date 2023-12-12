@@ -1,5 +1,5 @@
 <div class="Availability">
-    <p>Available <span>February 2023</span></p>
+    <p>Available <span>&nbsp;February 2024</span></p>
     <a href="#todo">
         <span>Let's connect</span>
         <img src="hands.svg" alt="" />
@@ -33,12 +33,12 @@
 
         @media $medium-up
             max-width 600px
-            padding 10px
+            padding 9px
             top 70px
 
         p
             position relative
-            top 2px
+            top 5px
             color #6C6D72
             font-size 1.5rem
             margin-left 45px
@@ -50,14 +50,15 @@
             &:before
                 content ""
                 position absolute
-                top 50%
+                top calc(50% - 3px)
                 transform translateY(-50%)
                 left -22px
                 height 8px
                 aspect-ratio 1
                 background #37C03C
                 border-radius 50%
-                outline 6px solid rgba(#37C03C, .10)
+                outline 0px solid rgba(#37C03C, .30)
+                animation blink 2s forwards infinite
 
             span
                 color white
@@ -74,6 +75,7 @@
             min-width 180px
             text-align center
             border-radius 10px
+            cursor none
 
             @media $medium-up
                 display flex
@@ -86,5 +88,16 @@
                 width 24px
                 position relative
                 top -1px
+        
+    @keyframes blink
+        0%
+            outline-width 0px
+        50%
+            outline-width 12px
+            outline-color transparent
+        100%
+            outline-width 0px
+            outline-color transparent
+            
 
 </style>

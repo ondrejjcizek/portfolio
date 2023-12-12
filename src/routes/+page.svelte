@@ -15,7 +15,7 @@
         <Card
             project="hotel"
             title="CPI Hotels"
-            desc="5 websites, 3 languagues & 3 hotels"
+            desc="5 unique hotels, 3 types, multilingual, individual styles."
             href="https://www.comforthotelpraguecityeast.com/en/"
             src="projects/hotel.png"
             srcset="projects/hotel@2x.png 2x"
@@ -23,7 +23,7 @@
         <Card
             project="centre"
             title="CPI Shopping Centres"
-            desc="Front-End for 15 famous shopping malls "
+            desc="13 unique shopping centers across Czech Republic"
             href="https://www.ncfenix.cz/"
             src="projects/centre.png"
             srcset="projects/centre@2x.png 2x"
@@ -31,7 +31,7 @@
         <Card
             project="tereos"
             title="Tereos TTD"
-            desc="Largest producer of sugar and alcohol in the Czech Republic"
+            desc="Leading sugar and alcohol producer, fostering sustainability and growth."
             href="https://tereos-ttd.com/"
             src="projects/tereos.png"
             srcset="projects/tereos@2x.png 2x"
@@ -39,10 +39,26 @@
         <Card
             project="ddf"
             title="KPMG Digital Design"
-            desc="Digital Design Framework KPMG Czech Republic"
+            desc="Digital Design Framework ensures clarity and systematic implementation."
             href="https://kpmg-digital-design.com/"
             src="projects/ddf.png"
             srcset="projects/ddf@2x.png 2x"
+        ></Card>
+        <Card
+            project="barbora"
+            title="Barbora Valaskova"
+            desc="Discover Valaskova's intimate world through serene blue-toned evocative paintings."
+            href="https://bv.giant4.cz/en"
+            src="projects/barbora.png"
+            srcset="projects/barbora@2x.png 2x"
+        ></Card>
+        <Card
+            project="rsts"
+            title="Raiffaisen Bank - NDA"
+            desc="Designed UI library for Raiffeisen Bank's financial management."
+            href=""
+            src="projects/rsts.png"
+            srcset="projects/rsts@2x.png 2x"
         ></Card>
     </CardWrapper>
 </Container>

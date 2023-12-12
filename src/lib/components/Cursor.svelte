@@ -69,5 +69,7 @@
             transform translate(-15px, 2px)
             z-index 100
             opacity 0
+            width 49px
+            height 19px
             transition opacity .3s $easing
 </style>

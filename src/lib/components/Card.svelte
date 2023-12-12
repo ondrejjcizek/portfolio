@@ -112,6 +112,7 @@
         text-decoration none
         cursor none
         mix-blend-mode difference
+        transition border-color .6s ease
 
         &.is-active
             :global(.Text)
@@ -186,27 +187,40 @@
         &.hotel
             .Card-background
                 // background linear-gradient(135deg, #FF5F03 36%, #E62B2B 60%);
-                background linear-gradient(223deg, #E62B2B 6.25%, #FF5F03 18.75%, #E62B2B 31.25%, #FF5F03 37.5%, #E62B2B 50%, #FF5F03 56.25%, #E62B2B 68.75%, #FF5F03 81.25%, #E62B2B 93.75%);
-                animation VisualBackground 10s ease infinite
+                background linear-gradient(135deg, #E62B2B 6.25%, #FF5F03 18.75%, #E62B2B 31.25%, #FF5F03 37.5%, #E62B2B 50%, #FF5F03 56.25%, #E62B2B 68.75%, #FF5F03 81.25%, #E62B2B 93.75%);
+                animation VisualBackground 18s ease infinite
                 background-size 400% 100%
         
         &.centre
             .Card-background
-                background linear-gradient(212.6deg, #AC0D47 12.11%, #FF573C 125.59%, #FF562A 127.06%);
-                animation VisualBackground 8s ease infinite
+                background linear-gradient(225deg, #B62056 6.25%, #E14134 18.75%, #B62056 31.25%, #E14134 37.5%, #B62056 50%, #E14134 56.25%, #B62056 68.75%, #E14134 81.25%, #B62056 93.75%);
+                animation VisualBackground 18s ease infinite
                 background-size 400% 100%
     
-        &.ddf
-            .Card-background
-                background linear-gradient(45deg, #29ADCF 30%, #171ED1 60%);
-                animation VisualBackground 4s ease infinite
-                background-size 200% 100%
-
         &.tereos
             .Card-background
-                background linear-gradient(225deg, #016fc4 50%, #29ADCF 60%);
-                animation VisualBackground 4s ease infinite
-                background-size 200% 100%
+                background linear-gradient(135deg, #1FA01B 6.25%, #6DD651 18.75%, #1FA01B 31.25%, #6DD651 37.5%, #1FA01B 50%, #6DD651 56.25%, #1FA01B 68.75%, #6DD651 81.25%, #1FA01B 93.75%);
+                animation VisualBackground 18s ease infinite
+                background-size 400% 100%
+
+        &.ddf
+            .Card-background
+                background linear-gradient(225deg, #171ED1 6.25%, #29ADCF 18.75%, #171ED1 31.25%, #29ADCF 37.5%, #171ED1 50%, #29ADCF 56.25%, #171ED1 68.75%, #29ADCF 81.25%, #171ED1 93.75%);
+                animation VisualBackground 18s ease infinite
+                background-size 400% 100%
+
+        &.barbora
+            .Card-background
+                background linear-gradient(135deg, #2E4ACD 6.25%, #131C64 18.75%, #2E4ACD 31.25%, #131C64 37.5%, #2E4ACD 50%, #131C64 56.25%, #2E4ACD 68.75%, #131C64 81.25%, #2E4ACD 93.75%);
+                animation VisualBackground 18s ease infinite
+                background-size 400% 100%
+        
+        &.rsts
+            .Card-background
+                background linear-gradient(225deg, #DE8100 6.25%, #FFD728 18.75%, #DE8100 31.25%, #FFD728 37.5%, #DE8100 50%, #FFD728 56.25%, #DE8100 68.75%, #FFD728 81.25%, #DE8100 93.75%);
+                animation VisualBackground 18s ease infinite
+                background-size 400% 100%
+
 
     @keyframes VisualBackground
         0%
