@@ -38,19 +38,21 @@
 
         p
             position relative
-            top 5px
+            top 4px
             color #6C6D72
             font-size 1.5rem
             margin-left 45px
             white-space nowrap
 
             @media $small-max
+                font-size 1.4rem
+                top 2px
                 margin-right 25px
 
             &:before
                 content ""
                 position absolute
-                top calc(50% - 3px)
+                top calc(50% + -1.5px)
                 transform translateY(-50%)
                 left -22px
                 height 8px
@@ -59,6 +61,9 @@
                 border-radius 50%
                 outline 0px solid rgba(#37C03C, .30)
                 animation blink 2s forwards infinite
+
+                @media $small-max
+                    top calc(50% + -1.5px)
 
             span
                 color white
