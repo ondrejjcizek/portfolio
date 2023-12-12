@@ -103,7 +103,7 @@
     .Card
         position relative
         background rgba(#19191A, .7)
-        border 1px solid rgba(white, .05)
+        outline 1px solid rgba(white, .05)
         padding percentage(47/535) percentage(50/535) percentage(61/535)
         border-radius 20px
         max-height 680px
@@ -115,6 +115,7 @@
         transition border-color .6s ease
 
         &.is-active
+            border-color transparent
             :global(.Text)
                 color white
 
@@ -186,7 +187,6 @@
             
         &.hotel
             .Card-background
-                // background linear-gradient(135deg, #FF5F03 36%, #E62B2B 60%);
                 background linear-gradient(135deg, #E62B2B 6.25%, #FF5F03 18.75%, #E62B2B 31.25%, #FF5F03 37.5%, #E62B2B 50%, #FF5F03 56.25%, #E62B2B 68.75%, #FF5F03 81.25%, #E62B2B 93.75%);
                 animation VisualBackground 18s ease infinite
                 background-size 400% 100%

@@ -10,6 +10,13 @@
                 video.play()
             }
         })
+
+        setTimeout(() => {
+            if (video) {
+                video.style.opacity = '1'
+                video.play()
+            }
+        }, 3000)
     })
 </script>
 
