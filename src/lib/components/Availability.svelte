@@ -60,7 +60,7 @@
                 background #37C03C
                 border-radius 50%
                 outline 0px solid rgba(#37C03C, .30)
-                animation blink 3s forwards infinite
+                animation blink 2.5s forwards infinite
 
                 @media $small-wide-max
                     top calc(50% + -1.5px)
@@ -98,7 +98,7 @@
         0%
             outline-width 0px
         50%
-            outline-width 8px
+            outline-width 9px
             outline-color transparent
 
         100%
