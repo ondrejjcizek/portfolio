@@ -44,7 +44,7 @@
             margin-left 45px
             white-space nowrap
 
-            @media $small-max
+            @media $small-wide-max
                 font-size 1.4rem
                 top 2px
                 margin-right 25px
@@ -60,9 +60,9 @@
                 background #37C03C
                 border-radius 50%
                 outline 0px solid rgba(#37C03C, .30)
-                animation blink 2s forwards infinite
+                animation blink 3s forwards infinite
 
-                @media $small-max
+                @media $small-wide-max
                     top calc(50% + -1.5px)
 
             span
@@ -98,11 +98,10 @@
         0%
             outline-width 0px
         50%
-            outline-width 12px
+            outline-width 8px
             outline-color transparent
+
         100%
             outline-width 0px
             outline-color transparent
-            
-
 </style>
