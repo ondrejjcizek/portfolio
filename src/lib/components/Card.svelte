@@ -11,6 +11,7 @@
     export let srcset: string
     export let href: string
     export let project: string
+    export let technology = 'Javascript'
 
     let card: any
     let background: any
@@ -86,7 +87,7 @@
         <Title tag="h3" size="md">{title}</Title>
         <Text color="grey">{desc}</Text>
         <BubbleWrapper>
-            <Bubble>Javascript</Bubble>
+            <Bubble>{technology}</Bubble>
             <Bubble>CSS</Bubble>
             <Bubble>HTML</Bubble>
         </BubbleWrapper>
@@ -113,6 +114,7 @@
         cursor none
         mix-blend-mode difference
         transition border-color .6s ease
+        user-select none
 
         &.is-active
             border-color transparent

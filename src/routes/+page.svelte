@@ -5,11 +5,13 @@
     import Card from '$lib/components/Card.svelte'
     import Container from '$lib/components/Container.svelte'
     import Hero from '$lib/components/Hero.svelte'
+    import About from '$lib/components/About.svelte'
 </script>
 
 <Availability />
 <Hero />
 <Container>
+    <About />
     <Title tag="h2" align="center"><span>Featured</span> projects</Title>
     <CardWrapper>
         <Card
@@ -59,6 +61,7 @@
             href=""
             src="projects/rsts.png"
             srcset="projects/rsts@2x.png 2x"
+            technology="SvelteKit"
         ></Card>
     </CardWrapper>
 </Container>

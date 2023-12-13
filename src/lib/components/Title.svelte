@@ -20,6 +20,9 @@
     .Title
         margin 0
         font-weight 500
+
+        @media $medium-up
+            font-weight 400
         
         :global(span)
             color #6C6D72
@@ -39,7 +42,6 @@
         margin 0 0 percentage(74/1100)
         font-size 3.4rem
         letter-spacing -1px
-        font-weight 500
 
         @media $small-wide-up
             font-size rvw(34, 60, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)

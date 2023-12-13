@@ -10,9 +10,13 @@
                 cursor.style.left = `${e.clientX - 10}px`
                 cursor.style.opacity = '1'
             })
+            document.querySelector('.rsts').addEventListener('click', event => {
+                event.preventDefault()
+            })
             const hoverables = document.querySelectorAll('.Card')
             hoverables.forEach(hoverable => {
-                hoverable.addEventListener('mouseenter', () => {
+                hoverable.addEventListener('mouseenter', event => {
+                    if (event.target.classList.contains('rsts')) return
                     cursor.classList.add('is-active')
                     background.style.transform = `scale(6)`
                 })
