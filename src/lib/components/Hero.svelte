@@ -55,7 +55,7 @@
             inset 0
             width 100%
             height 100svh
-            background: radial-gradient(circle, rgba(17,17,18,0) 0%, rgba(17,17,18,0.6615239845938375) 25%, rgba(17,17,18, 0.97) 50%, rgba(17,17,18,1) 75%, rgba(17,17,18,1) 100%)
+            background radial-gradient(circle, rgba(17,17,18,0) 0%, rgba(17,17,18,0.6615239845938375) 25%, rgba(17,17,18, 0.97) 50%, rgba(17,17,18,1) 75%, rgba(17,17,18,1) 100%)
 
             &:after
                 content ""
@@ -64,7 +64,7 @@
                 bottom 0
                 width 100%
                 height 100%
-                background: linear-gradient(180deg, rgba(17,17,18,0) 40%, rgba(17,17,18,1) 100%);
+                background linear-gradient(180deg, rgba(17,17,18,0) 40%, rgba(17,17,18,1) 100%)
             
             &:before
                 content ""
@@ -73,7 +73,7 @@
                 top 0
                 width 100%
                 height 100%
-                background: linear-gradient(0deg, rgba(17,17,18,0) 40%, rgba(17,17,18,1) 100%);
+                background linear-gradient(0deg, rgba(17,17,18,0) 40%, rgba(17,17,18,1) 100%)
 
         h1
             position relative
