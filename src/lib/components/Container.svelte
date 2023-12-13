@@ -10,7 +10,7 @@
         margin 0 auto
         max-width 1100px
         padding 0 24px
-        margin-top -20dvh
+        margin-top -20svh
 
         @media $medium-up
             padding 0 50px
