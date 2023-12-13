@@ -29,7 +29,7 @@
 
 <div class="Cursor" bind:this={cursor}>
     <div class="Cursor-background" bind:this={background}></div>
-    <img src="view.svg" alt="View" />
+    <img src="view.svg" alt="Views" />
 </div>
 
 <style lang="stylus">
