@@ -132,6 +132,7 @@
                     opacity 1
                     left calc(50% - 40px)
                     transform translate(-50%, 100%) scale(20)
+                    animation VisualBackground 18s ease infinite
         
         &.out-obsersved
             .Card-background
