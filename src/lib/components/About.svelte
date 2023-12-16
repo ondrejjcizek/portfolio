@@ -22,7 +22,6 @@
     .About
         position relative
         z-index 2
-        padding percentage(158/1100) 0 0 0
         margin-bottom percentage(238/1100)
         user-select none
 
