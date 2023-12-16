@@ -38,7 +38,7 @@
 <main>
     <slot />
 
-    <Cursor />
+    <!-- <Cursor /> -->
 </main>
 
 <style lang="stylus">
