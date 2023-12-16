@@ -38,7 +38,6 @@
         height 100svh
         display grid
         place-items center
-        margin-bottom percentage(200/1920)
 
         video
             position fixed
