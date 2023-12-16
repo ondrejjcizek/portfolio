@@ -23,9 +23,10 @@
             }
             background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px)`
             setTimeout(() => {
-                event.target.classList.remove('is-leaving')
-                event.target.classList.add('is-active')
-                event.target.classList.remove('is-delayed')
+                const target = event.target as HTMLDivElement
+                target.classList.remove('is-leaving')
+                target.classList.add('is-active')
+                target.classList.remove('is-delayed')
                 background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(20)`
             }, 10)
         })
@@ -35,37 +36,40 @@
                 return
             }
             background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(0)`
-            event.target.classList.remove('is-active')
-            event.target.classList.remove('is-delayed')
-            event.target.classList.add('is-leaving')
+            const target = event.target as HTMLDivElement
+            target.classList.remove('is-active')
+            target.classList.remove('is-delayed')
+            target.classList.add('is-leaving')
             setTimeout(() => {
-                event.target.classList.add('is-delayed')
+                target.classList.add('is-delayed')
             }, 500)
         })
 
-        card.addEventListener('click', event => {
+        card.addEventListener('click', (event: MouseEvent) => {
             if (navigator.maxTouchPoints > 0) {
                 // event.preventDefault()
             }
         })
 
-        function displayEntry(entry) {
+        function displayEntry(entry: any) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-obsersved')
                 entry.target.classList.remove('out-obsersved')
-                entry.target.classList.remove('is-leaving')
-                entry.target.classList.add('is-active')
+                // entry.target.classList.remove('is-leaving')
+                // entry.target.classList.add('is-active')
+                // entry.target.classList.remove('is-delayed')
             } else {
                 entry.target.classList.remove('is-obsersved')
                 entry.target.classList.add('out-obsersved')
-                entry.target.classList.remove('is-active')
-                entry.target.classList.add('is-leaving')
+                // entry.target.classList.remove('is-active')
+                // entry.target.classList.add('is-leaving')
+                // entry.target.classList.remove('is-delayed')
             }
         }
 
-        let callback = function (entries, observer) {
+        let callback = function (entries: any, observer: any) {
             if (navigator.maxTouchPoints > 0) {
-                entries.forEach(entry => {
+                entries.forEach((entry: any) => {
                     displayEntry(entry)
                 })
             }
@@ -116,8 +120,9 @@
         transition border-color .6s ease
         user-select none
 
-        &.is-active
+        &.is-active, &.is-obsersved
             border-color transparent
+
             :global(.Text)
                 color white
 
@@ -126,7 +131,7 @@
                 @media (pointer: coarse)
                     opacity 1
                     left calc(50% - 40px)
-                    transform translate(-50%, 0) scale(20)
+                    transform translate(-50%, 100%) scale(20)
         
         &.out-obsersved
             .Card-background
@@ -166,7 +171,7 @@
             background blue
             border-radius 50%
             opacity 0
-            transition transform 0s $easing, opacity 0.3s $easing, filter 1s $easing
+            transition transform 0s $easing, opacity 1.3s $easing, filter 1s $easing
             filter blur(3px)
 
             .is-leaving &
