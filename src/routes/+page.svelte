@@ -6,6 +6,7 @@
     import Container from '$lib/components/Container.svelte'
     import Hero from '$lib/components/Hero.svelte'
     import About from '$lib/components/About.svelte'
+    import Skills from '$lib/components/Skills.svelte'
 </script>
 
 <Availability />
@@ -48,8 +49,8 @@
         ></Card>
         <Card
             project="barbora"
-            title="Barbora Valaskova"
-            desc="Discover Valaskova's intimate world through serene blue-toned evocative paintings."
+            title="Barbora Valášková"
+            desc="Discover Valášková's intimate world through serene blue-toned evocative paintings."
             href="https://bv.giant4.cz/en"
             src="projects/barbora.png"
             srcset="projects/barbora@2x.png 2x"
@@ -64,4 +65,5 @@
             technology="SvelteKit"
         ></Card>
     </CardWrapper>
+    <Skills />
 </Container>

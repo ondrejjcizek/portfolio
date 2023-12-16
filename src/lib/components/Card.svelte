@@ -11,7 +11,7 @@
     export let srcset: string
     export let href: string
     export let project: string
-    export let technology = 'Javascript'
+    export let technology = 'Vanilla JS'
 
     let card: any
     let background: any

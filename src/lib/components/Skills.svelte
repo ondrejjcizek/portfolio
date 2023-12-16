@@ -1,0 +1,53 @@
+<script>
+    import Text from './Text.svelte'
+    import Title from './Title.svelte'
+</script>
+
+<div class="Skills">
+    <Title>My skill set</Title>
+    <ul>
+        <li><Text>SvelteKit</Text></li>
+        <li><Text>Vanilla JS</Text></li>
+        <li><Text>REST / GraphQL</Text></li>
+        <li><Text>Stylus / Sass</Text></li>
+        <li><Text>Git</Text></li>
+        <li><Text>Threlte</Text></li>
+    </ul>
+</div>
+
+<style lang="stylus">
+    .Skills
+        position relative
+        z-index 2
+
+        :global(.Title)
+            text-align center
+            letter-spacing 0
+            margin-bottom percentage(68/1100)
+        
+        ul
+            display flex
+            flex-wrap wrap
+            column-gap 8px
+            row-gap 10px
+            max-width 802px
+            margin 0 auto
+            padding-left 0
+            user-select none
+
+            li
+                display grid
+                place-items center
+                list-style-type none
+                text-align center
+                border 1px solid rgba(white, .05)
+                width calc(50% - 4px)
+                min-height 56px
+                border-radius 10px
+                line-height 1
+
+                :global(.Text)
+                    position relative
+                    top 3.5px
+
+</style>

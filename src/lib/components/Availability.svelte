@@ -26,6 +26,7 @@
         gap 20px
         padding 5px 0px 5px 0px
         margin-bottom 190px
+        user-select none
 
         @media $small-wide-up
             top 48px

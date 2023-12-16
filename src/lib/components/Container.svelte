@@ -15,4 +15,7 @@
         @media $medium-up
             padding 0 50px
             // margin-top 0
+        
+        & > :global(.Title)
+            margin 0 0 percentage(63/1100)
 </style>

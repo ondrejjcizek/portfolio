@@ -20,6 +20,7 @@
     .Title
         margin 0
         font-weight 500
+        user-select none
 
         @media $medium-up
             font-weight 400
@@ -39,7 +40,6 @@
             font-size 3.6rem
 
     .lg
-        margin 0 0 percentage(74/1100)
         font-size 3.4rem
         letter-spacing -1px
 

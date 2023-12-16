@@ -22,10 +22,11 @@
     .About
         position relative
         z-index 2
-        padding percentage(129/1200) 0 percentage(137/1200) 0
-        margin-bottom percentage(133/1200)
+        padding percentage(170/1200) 0 percentage(170/1200) 0
+        margin-bottom percentage(147/1200)
         border-top 1px solid rgba(#FFF, .05)
         border-bottom 1px solid rgba(#FFF, .05)
+        user-select none
 
         :global(.Title)
             text-align left

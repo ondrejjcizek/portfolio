@@ -7,6 +7,7 @@
         display flex
         flex-direction column
         gap 24px
+        margin-bottom percentage(107/1100)
 
         @media $small-wide-up
             display grid
