@@ -24,8 +24,9 @@
             background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px)`
             setTimeout(() => {
                 const target = event.target as HTMLDivElement
-                target.classList.remove('is-leaving')
                 target.classList.add('is-active')
+                target.classList.add('is-gradient')
+                target.classList.remove('is-leaving')
                 target.classList.remove('is-delayed')
                 background.style.transform = `translate(${event.offsetX}px, ${event.offsetY}px) scale(20)`
             }, 10)
@@ -42,6 +43,7 @@
             target.classList.add('is-leaving')
             setTimeout(() => {
                 target.classList.add('is-delayed')
+                target.classList.remove('is-gradient')
             }, 500)
         })
 
@@ -55,6 +57,7 @@
             if (entry.isIntersecting) {
                 entry.target.classList.add('is-obsersved')
                 entry.target.classList.remove('out-obsersved')
+                entry.target.classList.add('is-gradient')
                 // entry.target.classList.remove('is-leaving')
                 // entry.target.classList.add('is-active')
                 // entry.target.classList.remove('is-delayed')
@@ -64,6 +67,10 @@
                 // entry.target.classList.remove('is-active')
                 // entry.target.classList.add('is-leaving')
                 // entry.target.classList.remove('is-delayed')
+
+                setTimeout(() => {
+                    entry.target.classList.remove('is-gradient')
+                }, 500)
             }
         }
 
@@ -132,7 +139,7 @@
                     opacity 1
                     left calc(50% - 40px)
                     transform translate(-50%, 100%) scale(20)
-                    animation VisualBackground 18s ease infinite
+                    // animation VisualBackground 30s ease infinite
         
         &.out-obsersved
             .Card-background
@@ -179,16 +186,18 @@
                 transition transform 1.3s $easing, opacity 2s $easing
                 filter blur(9px)
 
-                @media $small-wide-max
+                @media (pointer: coarse)
                     transition transform 1.3s $easing, opacity 1s $easing
 
             .is-active &
                 transition transform 1s, opacity 1s $easing
                 opacity 1
-                animation VisualBackground 18s ease infinite
             
             .is-delayed &
                 transition transform 0s $easing, opacity 1s $easing
+            
+            .is-gradient &
+                animation VisualBackground 18s ease infinite
         
         &.hotel
             .Card-image
