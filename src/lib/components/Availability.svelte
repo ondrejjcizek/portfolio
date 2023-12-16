@@ -1,9 +1,26 @@
+<script lang="ts">
+    import { onMount } from 'svelte'
+
+    let button: HTMLButtonElement
+
+    onMount(() => {
+        let contact = document.querySelector('.Contact')
+        button.addEventListener('click', () => {
+            contact?.scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+                inline: 'nearest',
+            })
+        })
+    })
+</script>
+
 <div class="Availability">
     <p>Available <span>&nbsp;February 2024</span></p>
-    <a href="#todo">
+    <button bind:this={button}>
         <span>Let's connect</span>
         <img src="hands.svg" alt="" />
-    </a>
+    </button>
 </div>
 
 <style lang="stylus">
@@ -61,7 +78,7 @@
                 background #37C03C
                 border-radius 50%
                 outline 0px solid rgba(#37C03C, .30)
-                animation blink 2.5s forwards infinite
+                animation blink 1.5s forwards infinite
 
                 @media $small-wide-max
                     top calc(50% + -1.5px)
@@ -69,7 +86,7 @@
             span
                 color white
         
-        a
+        button
             display none
             justify-content center
             align-items center
@@ -82,6 +99,11 @@
             text-align center
             border-radius 10px
             cursor none
+            border none
+
+            &:hover
+                img
+                    transform scale(1.1)
 
             @media $medium-up
                 display flex
@@ -94,6 +116,7 @@
                 width 24px
                 position relative
                 top -1px
+                transition transform .3s $easeOutExpo
         
     @keyframes blink
         0%

@@ -22,14 +22,19 @@
     .About
         position relative
         z-index 2
-        padding percentage(170/1200) 0 percentage(170/1200) 0
-        margin-bottom percentage(147/1200)
-        border-top 1px solid rgba(#FFF, .05)
-        border-bottom 1px solid rgba(#FFF, .05)
+        padding percentage(158/1100) 0 0 0
+        margin-bottom percentage(238/1100)
         user-select none
+
+        @media $small-wide-max
+            margin-bottom 96px
 
         :global(.Title)
             text-align left
+            margin-bottom percentage(68/1100)
+            
+            @media $small-wide-max
+                margin-bottom 32px
 
         @media $medium-up
             display grid
@@ -42,6 +47,7 @@
                 font-weight 400
                 color #6C6D72
                 margin 0 0 (37/21em)
+                text-align left
 
                 @media $medium-up
                     font-size rvw(16, 21)

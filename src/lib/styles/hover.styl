@@ -1,11 +1,3 @@
-// hover()
-//     :global(.is-mousePointer &)
-//         {block}
-
-no-hover()
-    @media (hover:none), (hover:on-demand)
-        {block}
-
-lenis-hover()
-	@media (hover: hover)
+hover()
+    .is-mouse-pointer &
         {block}

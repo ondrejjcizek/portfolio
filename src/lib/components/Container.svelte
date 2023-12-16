@@ -18,4 +18,7 @@
         
         & > :global(.Title)
             margin 0 0 percentage(63/1100)
+
+            @media $small-wide-max
+                margin-bottom 40px
 </style>

@@ -60,13 +60,13 @@
                 entry.target.classList.add('is-gradient')
                 // entry.target.classList.remove('is-leaving')
                 // entry.target.classList.add('is-active')
-                // entry.target.classList.remove('is-delayed')
+                entry.target.classList.remove('is-delayed')
             } else {
                 entry.target.classList.remove('is-obsersved')
                 entry.target.classList.add('out-obsersved')
                 // entry.target.classList.remove('is-active')
                 // entry.target.classList.add('is-leaving')
-                // entry.target.classList.remove('is-delayed')
+                entry.target.classList.remove('is-delayed')
 
                 setTimeout(() => {
                     entry.target.classList.remove('is-gradient')
@@ -159,6 +159,7 @@
 
         :global(.Title)
             margin-bottom percentage(13/433)
+            color white
         
         :global(.Text)
             margin-bottom percentage(20/433)

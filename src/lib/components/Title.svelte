@@ -2,7 +2,7 @@
     interface $$Props {
         align?: 'left' | 'right' | 'center'
         color?: 'black' | 'white' | 'inherit'
-        size?: 'xs' | 'sm' | 'md' | 'lg'
+        size?: 'md' | 'lg'
         tag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5'
     }
 
@@ -28,17 +28,6 @@
         :global(span)
             color #6C6D72
 
-    .md
-        line-height (44/36)
-        font-size 2rem
-        letter-spacing -0.6px
-
-        @media $small-wide-up
-            font-size rvw(20, 36, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)
-
-        @media $xxlarge-up
-            font-size 3.6rem
-
     .lg
         font-size 3.4rem
         letter-spacing -1px
@@ -49,11 +38,20 @@
         @media $xxlarge-up
             font-size 6rem
     
+    .md
+        line-height (44/36)
+        font-size 2rem
+        letter-spacing -0.6px
+
+        @media $small-wide-up
+            font-size rvw(20, 36, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)
+
+        @media $xxlarge-up
+            font-size 3.6rem
+    
     .center
         text-align center
     
-    // Colors
-
-    .white
-        color white
+    .left
+        text-align left
 </style>

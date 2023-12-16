@@ -10,18 +10,33 @@
                 cursor.style.left = `${e.clientX - 10}px`
                 cursor.style.opacity = '1'
             })
-            document.querySelector('.rsts').addEventListener('click', event => {
+
+            document.querySelector('.rsts')?.addEventListener('click', event => {
                 event.preventDefault()
             })
-            const hoverables = document.querySelectorAll('.Card')
-            hoverables.forEach(hoverable => {
+
+            const cards = document.querySelectorAll('.Card')
+            cards.forEach(hoverable => {
                 hoverable.addEventListener('mouseenter', event => {
-                    if (event.target.classList.contains('rsts')) return
+                    const target = event.target as HTMLDivElement
+                    if (target.classList.contains('rsts')) return
                     cursor.classList.add('is-active')
                     background.style.transform = `scale(6)`
                 })
                 hoverable.addEventListener('mouseleave', () => {
                     cursor.classList.remove('is-active')
+                    background.style.transform = `scale(1)`
+                })
+            })
+
+            const links = document.querySelectorAll('a:not(.Card), button')
+            links.forEach(hoverable => {
+                hoverable.addEventListener('mouseenter', event => {
+                    cursor.classList.add('is-link')
+                    background.style.transform = `scale(2)`
+                })
+                hoverable.addEventListener('mouseleave', () => {
+                    cursor.classList.remove('is-link')
                     background.style.transform = `scale(1)`
                 })
             })
@@ -65,6 +80,10 @@
 
             :global(.is-active &)
                 background rgba(white, 0.4) !important
+
+            :global(.is-link &)
+                background rgba(white, 0.2) !important
+                backdrop-filter invert(1) !important
         
         img
             position absolute

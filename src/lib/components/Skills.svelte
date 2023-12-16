@@ -19,11 +19,18 @@
     .Skills
         position relative
         z-index 2
+        margin-bottom percentage(270/1100)
+
+        @media $small-wide-max
+            margin-bottom percentage(330/1100)
 
         :global(.Title)
             text-align center
             letter-spacing 0
             margin-bottom percentage(68/1100)
+            
+            @media $small-wide-max
+                margin-bottom 40px
         
         ul
             display flex
