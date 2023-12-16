@@ -103,7 +103,7 @@
             <Bubble>HTML</Bubble>
         </BubbleWrapper>
         <div class="Card-image">
-            <img {src} {srcset} alt={title} />
+            <img {src} {srcset} alt={title} draggable="false" />
         </div>
     </div>
     <div class="Card-background" bind:this={background}></div>
@@ -126,6 +126,9 @@
         mix-blend-mode difference
         transition border-color .6s ease
         user-select none
+
+        &:focus
+            outline solid 2px #2B5DFF
 
         &.is-active, &.is-obsersved
             border-color transparent

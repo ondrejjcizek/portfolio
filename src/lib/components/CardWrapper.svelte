@@ -7,10 +7,10 @@
         display flex
         flex-direction column
         gap 24px
-        margin-bottom percentage(102/1100)
+        margin-bottom percentage(200/1100)
 
         @media $small-wide-max
-            margin-bottom percentage(170/1100)
+            margin-bottom percentage(250/1100)
 
         @media $medium-up
             display grid

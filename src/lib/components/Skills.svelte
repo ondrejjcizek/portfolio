@@ -19,10 +19,10 @@
     .Skills
         position relative
         z-index 2
-        margin-bottom percentage(270/1100)
+        margin-bottom percentage(200/1100)
 
         @media $small-wide-max
-            margin-bottom percentage(330/1100)
+            margin-bottom percentage(250/1100)
 
         :global(.Title)
             text-align center
@@ -49,9 +49,12 @@
                 text-align center
                 border 1px solid rgba(white, .05)
                 width calc(50% - 4px)
-                min-height 56px
+                min-height 44px
                 border-radius 10px
                 line-height 1
+
+                @media $medium-up
+                    min-height 56px
 
                 :global(.Text)
                     position relative

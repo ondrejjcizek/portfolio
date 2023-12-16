@@ -17,17 +17,20 @@
 
 <style lang="stylus">
     .Contact
+        margin-bottom percentage(200/1100)
+        user-select none
+
+        @media $small-wide-max
+            margin-bottom percentage(250/1100)
+        
         :global(.Title)
             text-align center
-            font-size 3.4rem
+            font-size 3rem
             letter-spacing -1px
             margin-bottom 40px
 
-            @media only screen and (max-width: 380px)
-                font-size 3.1rem
-
             @media $small-wide-up
-                font-size rvw(34, 60, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)
+                font-size rvw(30, 60, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)
                 margin 0 0 percentage(74/1100)
             
             @media $xlarge-up
@@ -74,6 +77,10 @@
                 padding percentage(42/1100) percentage(50/1100) percentage(32/1100) percentage(50/1100)
                 font-size 1.6rem
                 cursor none
+                border-radius 10px
+
+                &:focus
+                    outline 1px solid white
                 
                 @media $small-wide-up
                     font-size rvw(16, 36, $fromMedia: $viewports.smallWide.min, $toMedia: $viewports.xlarge.max)

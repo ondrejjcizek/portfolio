@@ -101,6 +101,9 @@
             cursor none
             border none
 
+            &:focus
+                outline solid 2px rgba(white, 1)
+
             &:hover
                 img
                     transform scale(1.1)
