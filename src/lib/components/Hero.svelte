@@ -6,14 +6,14 @@
         let video = document.querySelector('video')
         video?.addEventListener('canplaythrough', () => {
             if (video) {
-                video.style.opacity = '1'
+                video.style.opacity = '0.8'
                 video.play()
             }
         })
 
         setTimeout(() => {
             if (video) {
-                video.style.opacity = '1'
+                video.style.opacity = '0.8'
                 video.play()
             }
         }, 3000)
