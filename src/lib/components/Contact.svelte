@@ -18,7 +18,6 @@
 <style lang="stylus">
     .Contact
         margin-bottom percentage(200/1100)
-        user-select none
 
         @media $small-wide-max
             margin-bottom percentage(250/1100)

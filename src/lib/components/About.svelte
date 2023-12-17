@@ -6,14 +6,19 @@
     <Title tag="h2" align="center">About</Title>
     <div class="About-wrapper">
         <p>
-            Detail-oriented <b>Frontend Developer</b> specializing in CSS precision and fluid
-            animations. <b>I&nbsp;bring five years of expertise</b> in the realm of web development.
+            Hey, I'm <b>Ondřej Čížek</b>, a 27-year-old Frontend Developer from the Czech Republic,
+            currently shaping pixels and code <b>remotely</b> from the enchanting island of Bali.
         </p>
         <p>
-            Proficient in SvelteKit, my approach prioritizes thoroughness in coding practices to
-            produce flawless designs and animations that elevate user experiences. Passionate about
-            leveraging technology to create visually stunning and flawlessly executed frontend
-            solutions.
+            My expertise lies in meticulous CSS precision and crafting fluid animations, backed by
+            over five years of dedicated experience in web development. I specialize in
+            <b>SvelteKit</b>, leveraging this <b>framework</b> to engineer high-quality web solutions
+            with a focus on flawless designs and engaging user interactions.
+        </p>
+        <p>
+            Fueled by a passion for merging technology and <b>creativity</b>, I'm committed to
+            delivering frontend solutions that not only function seamlessly but also captivate
+            users, elevating their digital experiences.
         </p>
     </div>
 </section>
