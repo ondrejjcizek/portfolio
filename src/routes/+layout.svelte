@@ -1,6 +1,7 @@
 <script lang="ts">
     import '$lib/styles/main.styl'
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit'
+    import Lenis from '@studio-freight/lenis'
 
     import Cursor from '$lib/components/Cursor.svelte'
     import { onMount, afterUpdate } from 'svelte'
@@ -22,6 +23,19 @@
                 // format the output
                 `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}" />`
         }
+
+        const lenis = new Lenis()
+
+        lenis.on('scroll', (e: any) => {
+            console.log(e)
+        })
+
+        function raf(time: any) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+
+        requestAnimationFrame(raf)
     })
 
     afterUpdate(() => {
