@@ -8,7 +8,6 @@
     export let title: string
     export let desc: string
     export let src: string
-    export let srcset: string
     export let href: string
     export let project: string
     export let technology = 'Vanilla JS'
@@ -103,7 +102,11 @@
             <Bubble>HTML</Bubble>
         </BubbleWrapper>
         <div class="Card-image">
-            <img {src} {srcset} alt={title} draggable="false" />
+            <picture>
+                <source srcset={`${src}@2x.webp`} type="image/webp" />
+                <source srcset={`${src}@2x.png`} type="image/png" />
+                <img src={`${src}.png`} alt={title} draggable="false" />
+            </picture>
         </div>
     </div>
     <div class="Card-background" bind:this={background}></div>
