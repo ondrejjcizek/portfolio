@@ -8,11 +8,13 @@
     import About from '$lib/components/About.svelte'
     import Skills from '$lib/components/Skills.svelte'
     import Contact from '$lib/components/Contact.svelte'
+    import Image from '$lib/components/Image.svelte'
 </script>
 
 <Availability />
 <Hero />
 <Container>
+    <Image />
     <About />
     <Title tag="h2" align="center"><span>Featured</span> projects</Title>
     <CardWrapper>
