@@ -12,7 +12,10 @@
 </script>
 
 <div class="Image">
-    <img src="oc.jpg" alt="Ondřej Čížek" bind:this={image} />
+    <picture>
+        <source srcset="oc@2x.webp" type="image/webp" />
+        <img src="oc.jpg" srcset="oc@2x.jpg" alt="Ondřej Čížek" bind:this={image} />
+    </picture>
 </div>
 
 <style lang="stylus">
