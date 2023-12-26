@@ -49,7 +49,7 @@
     let meshBadge: THREE.Mesh
 </script>
 
-<T.PerspectiveCamera position.z={6} makeDefault>
+<T.PerspectiveCamera position.z={7} makeDefault>
     <OrbitControls autoRotate={true} enabled={false} autoRotateSpeed={10} />
 </T.PerspectiveCamera>
 

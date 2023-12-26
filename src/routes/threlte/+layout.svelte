@@ -46,6 +46,7 @@
                     font-size 14px
                     transition color .3s ease, background .3s ease
                     cursor none
+                    white-space nowrap
 
                     &:hover
                         +hover()

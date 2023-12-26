@@ -49,13 +49,16 @@
     let innerWidth: number
     let isMobile: boolean
     let touchRotation: number
+    let modelSize: number
 
     $: if (innerWidth >= 768) {
         isMobile = false
         touchRotation = 1
+        modelSize = 4
     } else {
         isMobile = true
         touchRotation = 1
+        modelSize = 7
     }
 </script>
 
@@ -63,7 +66,7 @@
 
 <T.WebGLRenderer alpha={true} />
 
-<T.PerspectiveCamera position.z={4} makeDefault>
+<T.PerspectiveCamera position.z={modelSize} makeDefault>
     <!-- <OrbitControls /> -->
 </T.PerspectiveCamera>
 
