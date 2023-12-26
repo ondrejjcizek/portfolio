@@ -11,7 +11,7 @@
         <li><Text>REST / GraphQL</Text></li>
         <li><Text>Stylus / Sass</Text></li>
         <li><Text>Git</Text></li>
-        <li><Text>Threlte</Text></li>
+        <li><a href="/threlte"><Text>Threlte</Text></a></li>
     </ul>
 </div>
 
@@ -58,6 +58,23 @@
 
                 :global(.Text)
                     position relative
-                    top 3.5px
+                    top 2px
+                
+                a
+                    display grid
+                    place-items center
+                    text-decoration none
+                    width 100%
+                    height 100%
+                    border 1px solid transparent
+                    background transparent
+                    border-radius 10px
+                    border 1px solid rgba(#FF5B28, 0.3)
+                    transition border .3s ease, background .3s ease
+                    cursor none
+
+                    &:hover
+                        border 1px solid #FF5B28
+                        background #FF5B28
 
 </style>

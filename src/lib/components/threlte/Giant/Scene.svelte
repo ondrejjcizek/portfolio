@@ -46,10 +46,10 @@
     }
 
     let meshBadge: THREE.Mesh
-    let innerWidth: number
     let isMobile: boolean
     let touchRotation: number
     let modelSize: number
+    let innerWidth: number
 
     $: if (innerWidth >= 768) {
         isMobile = false
@@ -58,7 +58,7 @@
     } else {
         isMobile = true
         touchRotation = 1
-        modelSize = 7
+        modelSize = 5
     }
 </script>
 

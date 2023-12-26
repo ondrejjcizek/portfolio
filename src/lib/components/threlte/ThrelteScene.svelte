@@ -1,9 +1,20 @@
 <script lang="ts">
     import { T } from '@threlte/core'
     import { OrbitControls, Grid, ContactShadows, Float } from '@threlte/extras'
+
+    let innerWidth: number
+    let modelSize: number
+
+    $: if (innerWidth >= 768) {
+        modelSize = 10
+    } else {
+        modelSize = 15
+    }
 </script>
 
-<T.PerspectiveCamera makeDefault position={[-10, 10, 10]} fov={25}>
+<svelte:window bind:innerWidth />
+
+<T.PerspectiveCamera makeDefault position={[-10, 10, modelSize]} fov={25}>
     <OrbitControls
         autoRotate
         enableZoom={false}
