@@ -1,7 +1,7 @@
 <script lang="ts">
     import { spring } from 'svelte/motion'
     import { T } from '@threlte/core'
-    import GiantModel from './GTexture.svelte'
+    import GiantModel from './GiantModel.svelte'
     import {
         ContactShadows,
         Environment,
@@ -63,13 +63,13 @@
 
 <T.WebGLRenderer alpha={true} />
 
-<T.PerspectiveCamera position.z={0.5} makeDefault>
+<T.PerspectiveCamera position.z={4} makeDefault>
     <!-- <OrbitControls /> -->
 </T.PerspectiveCamera>
 
-<T.AmbientLight intensity={30} />
-<T.DirectionalLight position={[5, 10, 15]} intensity={3} />
-<ContactShadows scale={5} blur={10} far={2.5} opacity={0.5} />
+<T.AmbientLight intensity={3} />
+<T.DirectionalLight position={[5, 10, 15]} intensity={4} />
+<ContactShadows scale={5} blur={2} far={10} opacity={0.5} />
 
 <T.Group scale={$scale} rotation.y={$rotation}>
     <T.Group rotation.y={-$pointer.x * touchRotation} rotation.x={$pointer.y * 0.5}>
