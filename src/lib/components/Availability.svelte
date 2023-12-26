@@ -119,7 +119,7 @@
                 width 24px
                 position relative
                 top -1px
-                transition transform .3s $easeOutExpo
+                transition transform 1s $easeOutExpo
         
     @keyframes blink
         0%
