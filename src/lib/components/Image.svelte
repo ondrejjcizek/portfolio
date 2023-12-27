@@ -6,6 +6,7 @@
     onMount(() => {
         window.addEventListener('scroll', () => {
             let { scrollY } = window
+            if (!image) return
             image.style.transform = `translateY(${scrollY / 20}px)`
         })
     })

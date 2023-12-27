@@ -3,30 +3,15 @@
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit'
     import { fade } from 'svelte/transition'
     import Lenis from '@studio-freight/lenis'
-
-    export let data
+    import type { LayoutServerData } from './$types'
+    import { disableScrollHandling } from '$app/navigation'
+    export let data: LayoutServerData
 
     import Cursor from '$lib/components/Cursor.svelte'
-    import { onMount, afterUpdate } from 'svelte'
-    let cursorColor = 'blue'
-    let cursorSize = 28
-    let cursorSquare = false
-    let cursorMixBlendMode = 'exclusion'
-    let cursorShape = 'circle'
-
-    if (cursorSquare) {
-        cursorShape = 'square'
-    }
+    import { onMount } from 'svelte'
 
     onMount(() => {
-        // const cursorElement = document.querySelector('.cursor-element')
-        // const cursorOutput = document.querySelector('.cursor-output')
-        // if (cursorElement && cursorOutput) {
-        //     cursorOutput.textContent =
-        //         // format the output
-        //         `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}" />`
-        // }
-
+        disableScrollHandling()
         const lenis = new Lenis()
 
         // lenis.on('scroll', (e: any) => {
@@ -40,23 +25,13 @@
 
         requestAnimationFrame(raf)
     })
-
-    // afterUpdate(() => {
-    //     const cursorElement = document.querySelector('.cursor-element')
-    //     const cursorOutput = document.querySelector('.cursor-output')
-    //     if (cursorElement && cursorOutput) {
-    //         cursorOutput.textContent =
-    //             // format the output
-    //             `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}"  />`
-    //     }
-    // })
 </script>
 
 <svelte:head>
     <title>Frontend Creative Developer</title>
 </svelte:head>
 
-{#key data.url}
+{#key data.pathname}
     <main transition:fade={{ delay: 0, duration: 400 }}>
         <slot />
     </main>

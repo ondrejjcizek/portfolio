@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount, onDestroy } from 'svelte'
+    import { onMount, afterUpdate } from 'svelte'
     import { spring } from 'svelte/motion'
     let cursor: HTMLDivElement
     let background: HTMLDivElement
@@ -48,10 +48,6 @@
         }
 
         initCursor()
-    })
-
-    onDestroy(() => {
-        console.log('updated')
     })
 </script>
 
