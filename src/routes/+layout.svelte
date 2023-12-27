@@ -19,13 +19,13 @@
     }
 
     onMount(() => {
-        const cursorElement = document.querySelector('.cursor-element')
-        const cursorOutput = document.querySelector('.cursor-output')
-        if (cursorElement && cursorOutput) {
-            cursorOutput.textContent =
-                // format the output
-                `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}" />`
-        }
+        // const cursorElement = document.querySelector('.cursor-element')
+        // const cursorOutput = document.querySelector('.cursor-output')
+        // if (cursorElement && cursorOutput) {
+        //     cursorOutput.textContent =
+        //         // format the output
+        //         `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}" />`
+        // }
 
         const lenis = new Lenis()
 
@@ -41,22 +41,26 @@
         requestAnimationFrame(raf)
     })
 
-    afterUpdate(() => {
-        const cursorElement = document.querySelector('.cursor-element')
-        const cursorOutput = document.querySelector('.cursor-output')
-        if (cursorElement && cursorOutput) {
-            cursorOutput.textContent =
-                // format the output
-                `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}"  />`
-        }
-    })
+    // afterUpdate(() => {
+    //     const cursorElement = document.querySelector('.cursor-element')
+    //     const cursorOutput = document.querySelector('.cursor-output')
+    //     if (cursorElement && cursorOutput) {
+    //         cursorOutput.textContent =
+    //             // format the output
+    //             `<Cursor color="${cursorColor}" mixBlendMode="${cursorMixBlendMode}" size="${cursorSize}"  />`
+    //     }
+    // })
 </script>
+
+<svelte:head>
+    <title>Frontend Creative Developer</title>
+</svelte:head>
 
 {#key data.url}
     <main transition:fade={{ delay: 0, duration: 400 }}>
         <slot />
-        <Cursor />
     </main>
+    <Cursor />
 {/key}
 
 <style lang="stylus">

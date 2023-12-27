@@ -74,7 +74,8 @@
                     cursor none
 
                     &:hover
-                        border 1px solid #FF5B28
-                        background #FF5B28
+                        +hover()
+                            border 1px solid #FF5B28
+                            background #FF5B28
 
 </style>

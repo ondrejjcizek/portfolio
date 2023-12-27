@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from 'svelte'
+    import { onMount, onDestroy } from 'svelte'
     import { spring } from 'svelte/motion'
     let cursor: HTMLDivElement
     let background: HTMLDivElement
@@ -49,11 +49,15 @@
 
         initCursor()
     })
+
+    onDestroy(() => {
+        console.log('updated')
+    })
 </script>
 
 <div class="Cursor" bind:this={cursor} style:--x={`${$coords.x}px`} style:--y={`${$coords.y}px`}>
     <div class="Cursor-background" bind:this={background}></div>
-    <img src="view.svg" alt="View" />
+    <img src="/view.svg" alt="View" />
 </div>
 
 <style lang="stylus">
@@ -67,7 +71,7 @@
         pointer-events none
         z-index 5
         opacity 0
-        transition opacity 0.3s $easing .3s
+        transition opacity 0.3s $easing .25s
 
         @media $small-wide-max
             display none
