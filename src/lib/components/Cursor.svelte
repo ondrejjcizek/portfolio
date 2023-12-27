@@ -32,7 +32,9 @@
                 })
             })
 
-            const links = document.querySelectorAll('a:not(.Card, .Link), button, .SceneNavigation')
+            const links = document.querySelectorAll(
+                'a:not(.Card, .Link), button, .SceneNavigation, .HomeNavigation',
+            )
             links.forEach(hoverables => {
                 hoverables.addEventListener('mouseenter', event => {
                     cursor.classList.add('is-link')
@@ -65,7 +67,7 @@
         pointer-events none
         z-index 5
         opacity 0
-        transition opacity 0.6s $easing
+        transition opacity 0.3s $easing .3s
 
         @media $small-wide-max
             display none

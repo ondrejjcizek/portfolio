@@ -1,7 +1,10 @@
 <script lang="ts">
     import '$lib/styles/main.styl'
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit'
+    import { fade } from 'svelte/transition'
     import Lenis from '@studio-freight/lenis'
+
+    export let data
 
     import Cursor from '$lib/components/Cursor.svelte'
     import { onMount, afterUpdate } from 'svelte'
@@ -49,11 +52,12 @@
     })
 </script>
 
-<main>
-    <slot />
-
-    <Cursor />
-</main>
+{#key data.url}
+    <main transition:fade={{ delay: 0, duration: 400 }}>
+        <slot />
+        <Cursor />
+    </main>
+{/key}
 
 <style lang="stylus">
     main

@@ -3,6 +3,9 @@
 </script>
 
 <div class="Scene">
+    <nav class="HomeNavigation">
+        <li><a class="Link" href="/">Home</a></li>
+    </nav>
     <nav class="SceneNavigation">
         <li><a class="Link" href="/threlte/rgb-distortion">RGB Distortion</a></li>
         <li><a class="Link" href="/threlte/outline">Outline</a></li>
@@ -33,6 +36,10 @@
             border-radius 10px
             gap 12px
             min-height 52px
+
+            &.HomeNavigation
+                left 24px
+                transform unset
 
             li
                 margin 0
