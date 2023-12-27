@@ -40,6 +40,9 @@
             &.HomeNavigation
                 left 24px
                 transform unset
+                
+                @media $small-wide-max
+                    display none
 
             li
                 margin 0
