@@ -55,7 +55,7 @@
         ></Card>
         <Card
             project="rsts"
-            title="Raiffaisen Bank - NDA"
+            title="Raiffeisen Bank - NDA"
             desc="Designed UI library for Raiffeisen Bank's financial management."
             href=""
             src="projects/rsts"
