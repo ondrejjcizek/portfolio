@@ -16,7 +16,7 @@
 </script>
 
 <div class="Availability">
-    <p>Available <span>&nbsp;February 2024</span></p>
+    <p>Available <span>&nbsp;March 2024</span></p>
     <button bind:this={button}>
         <span>Let's connect</span>
         <img src="hands.svg" alt="" />
