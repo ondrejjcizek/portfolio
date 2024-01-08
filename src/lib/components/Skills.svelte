@@ -5,12 +5,17 @@
 
 <div class="Skills">
     <Title>My skill set</Title>
-    <ul>
+    <ul class="Skills-framework">
         <li><Text>SvelteKit</Text></li>
+        <li><Text>Next.js</Text></li>
+        <li><Text>Nuxt</Text></li>
+    </ul>
+    <ul>
         <li><Text>Vanilla JS</Text></li>
-        <li><Text>REST / GraphQL</Text></li>
         <li><Text>Stylus / Sass</Text></li>
-        <li><Text>Git</Text></li>
+        <li><Text>Prisma</Text></li>
+        <li><Text>REST / GraphQL</Text></li>
+        <li><Text>Github Actions</Text></li>
         <li><a href="/threlte"><Text>Threlte</Text></a></li>
     </ul>
 </div>
@@ -41,6 +46,10 @@
             margin 0 auto
             padding-left 0
             user-select none
+
+            &.Skills-framework
+                flex-wrap nowrap
+                margin-bottom 8px
 
             li
                 display grid
