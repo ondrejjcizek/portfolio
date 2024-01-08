@@ -1,6 +1,8 @@
 <script lang="ts">
     import '$lib/styles/main.styl'
     import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit'
+    import { dev } from '$app/environment'
+    import { inject } from '@vercel/analytics'
     import { fade } from 'svelte/transition'
     import Lenis from '@studio-freight/lenis'
     import type { LayoutServerData } from './$types'
@@ -9,6 +11,8 @@
 
     import Cursor from '$lib/components/Cursor.svelte'
     import { onMount } from 'svelte'
+
+    inject({ mode: dev ? 'development' : 'production' })
 
     onMount(() => {
         disableScrollHandling()
