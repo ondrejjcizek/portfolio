@@ -7,6 +7,8 @@
     let coords = spring({ x: 50, y: 50 }, { stiffness: 0.1, damping: 0.5 })
 
     onMount(() => {
+        const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent)
+
         const initCursor = () => {
             document.addEventListener('mousemove', e => {
                 if (!cursor) return
@@ -20,6 +22,8 @@
 
             const cards = document.querySelectorAll('.Card')
             cards.forEach(hoverable => {
+                if (isSafari) return
+
                 hoverable.addEventListener('mouseenter', event => {
                     const target = event.target as HTMLDivElement
                     if (target.classList.contains('rsts')) return
