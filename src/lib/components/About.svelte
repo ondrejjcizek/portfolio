@@ -6,8 +6,8 @@
     <Title tag="h2" align="center">About</Title>
     <div class="About-wrapper">
         <p>
-            Hey, I'm <b>Ondřej Čížek</b>, a 27-year-old Frontend Developer from the Czech Republic,
-            currently shaping pixels and code <b>remotely</b> from the enchanting island of Bali.
+            Hey, I'm <b>Ondřej Čížek</b>, a 27-year-old Frontend Developer from the Czech Republic.
+            <!-- currently shaping pixels and code <b>remotely</b> from the enchanting island of Bali. -->
         </p>
         <p>
             My expertise lies in meticulous CSS precision and crafting fluid animations, backed by
